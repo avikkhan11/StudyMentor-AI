@@ -1,11 +1,10 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { Button } from "./ui/button"
+import { Input } from "./ui/input"
+import { ScrollArea } from "./ui/scroll-area"
 import { FileText, Send, User, Bot } from "lucide-react"
-
 
 export function SubjectChat({ subjectId }) {
   const [messages, setMessages] = useState([

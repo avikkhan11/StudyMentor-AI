@@ -1,20 +1,17 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Calendar } from "@/components/ui/calendar"
-import { SubjectCard } from "@/components/subject-card"
-import { UserLevel } from "@/components/user-level"
-import { DailyStreak } from "@/components/daily-streak"
-import { RecentActivity } from "@/components/recent-activity"
-import { UpcomingAssignments } from "@/components/upcoming-assignments"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
+import { Button } from "../components/ui/button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs"
+import { Calendar } from "../components/ui/calendar"
+import { SubjectCard } from "../components/subject-card"
+import { UserLevel } from "../components/user-level"
+import { DailyStreak } from "../components/daily-streak"
+import { RecentActivity } from "../components/recent-activity"
+import { UpcomingAssignments } from "../components/upcoming-assignments"
 import { Plus, BookOpen, CalendarIcon, Trophy } from "lucide-react"
-import { SidebarProvider } from "@/components/ui/sidebar"
-import { AppSidebar } from "@/components/app-sidebar";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom"
 
-
-export default function Dashboard() {
-  // Mock data - in a real app, this would come from a database
+export default function DashboardPage() {
+  // Mock data
   const userStats = {
     level: 7,
     xp: 3240,
@@ -32,14 +29,7 @@ export default function Dashboard() {
   ]
 
   return (
-    <>
-   
     <div className="flex flex-col p-6 space-y-6">
-    <SidebarProvider>
-   
-   <AppSidebar />
- 
-</SidebarProvider>
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold">Dashboard</h1>
         <Button asChild>
@@ -171,6 +161,5 @@ export default function Dashboard() {
         </TabsContent>
       </Tabs>
     </div>
-    </>
   )
 }

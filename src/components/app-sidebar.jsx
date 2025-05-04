@@ -1,6 +1,4 @@
-"use client"
-import { Link } from "react-router-dom"
-
+import { Link, useLocation } from "react-router-dom"
 import {
   Sidebar,
   SidebarContent,
@@ -13,13 +11,27 @@ import {
   SidebarGroup,
   SidebarGroupLabel,
   SidebarGroupContent,
-} from "@/components/ui/sidebar"
-import { Button } from "@/components/ui/button"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Home, Calendar, Trophy, Settings, LogOut, User, ChevronDown, Plus, Zap, Sparkles } from "lucide-react"
+} from "./ui/sidebar"
+import { Button } from "./ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu"
+import {
+  Home,
+  Calendar,
+  Trophy,
+  Settings,
+  LogOut,
+  User,
+  ChevronDown,
+  Plus,
+  Zap,
+  Sparkles,
+  BookOpen,
+} from "lucide-react"
 
 export function AppSidebar() {
+  const location = useLocation()
+  const pathname = location.pathname
 
   // Mock subjects - in a real app, these would come from a database
   const subjects = [
@@ -45,6 +57,7 @@ export function AppSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton
               asChild
+              isActive={pathname === "/dashboard"}
               className="hover:bg-primary/10 data-[active=true]:bg-primary/20 data-[active=true]:text-primary"
             >
               <Link to="/dashboard">
@@ -57,11 +70,12 @@ export function AppSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton
               asChild
+              isActive={pathname === "/subjects"}
               className="hover:bg-primary/10 data-[active=true]:bg-primary/20 data-[active=true]:text-primary"
             >
-              <Link to="/calendar">
-                <Calendar className="h-4 w-4" />
-                <span>Study Calendar</span>
+              <Link to="/subjects">
+                <BookOpen className="h-4 w-4" />
+                <span>Subjects</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -69,6 +83,20 @@ export function AppSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton
               asChild
+              isActive={pathname === "/calendar"}
+              className="hover:bg-primary/10 data-[active=true]:bg-primary/20 data-[active=true]:text-primary"
+            >
+              <Link to="/calendar">
+                <Calendar className="h-4 w-4" />
+                <span>Calendar</span>
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+
+          <SidebarMenuItem>
+            <SidebarMenuButton
+              asChild
+              isActive={pathname === "/achievements"}
               className="hover:bg-primary/10 data-[active=true]:bg-primary/20 data-[active=true]:text-primary"
             >
               <Link to="/achievements">
@@ -107,6 +135,7 @@ export function AppSidebar() {
                 <SidebarMenuItem key={subject.id}>
                   <SidebarMenuButton
                     asChild
+                    isActive={pathname === `/subjects/${subject.id}`}
                     className="hover:bg-primary/10 data-[active=true]:bg-primary/20 data-[active=true]:text-primary"
                   >
                     <Link to={`/subjects/${subject.id}`}>
@@ -129,6 +158,7 @@ export function AppSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton
               asChild
+              isActive={pathname === "/settings"}
               className="hover:bg-primary/10 data-[active=true]:bg-primary/20 data-[active=true]:text-primary"
             >
               <Link to="/settings">

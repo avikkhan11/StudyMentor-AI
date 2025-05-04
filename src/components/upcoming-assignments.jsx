@@ -1,5 +1,5 @@
 import { CalendarClock } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "./ui/badge"
 
 export function UpcomingAssignments() {
   // Mock data - in a real app, this would come from a database

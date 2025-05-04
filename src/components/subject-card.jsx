@@ -1,7 +1,7 @@
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
+import { Link } from "react-router-dom"
+import { Card, CardContent, CardFooter } from "../components/ui/card"
+import { Progress } from "../components/ui/progress"
 import { FileText, ListTodo } from "lucide-react"
-import { Link } from 'react-router-dom';
 
 
 export function SubjectCard({ subject }) {

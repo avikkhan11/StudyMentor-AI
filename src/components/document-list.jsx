@@ -1,11 +1,11 @@
 import { FileText, FileCode, FileImage, MoreHorizontal } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Badge } from "@/components/ui/badge"
+import { Button } from "./ui/button"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu"
+import { Badge } from "./ui/badge"
 
 
 export function DocumentList({ subjectId }) {
-  // Mock data - in a real app, this would come from a database
+  // Mock data 
   const documents = [
     {
       id: 1,

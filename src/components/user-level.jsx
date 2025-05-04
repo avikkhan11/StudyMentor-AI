@@ -1,4 +1,5 @@
-import { Progress } from "@/components/ui/progress"
+import { Progress } from "./ui/progress"
+
 
 export function UserLevel({ level, xp, nextLevelXp }) {
   const progress = Math.round((xp / nextLevelXp) * 100)
