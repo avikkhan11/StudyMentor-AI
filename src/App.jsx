@@ -7,6 +7,9 @@ function App() {
     <div className="app">
       <h1>StudyMentor AI</h1>
       <p>Your personal AI study companion</p>
+      <h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1>
       
       <nav>
         <ul>
