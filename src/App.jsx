@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
+import { Button } from "@/components/ui/button"
 
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
       <h1 class="text-3xl font-bold underline">
     Hello world!
   </h1>
+
+  <Button>Click me</Button>
       
       <nav>
         <ul>
