@@ -5,11 +5,16 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Subjects from './pages/Subjects';
 import SubjectDetail from './pages/SubjectDetail';
+import Calendar from './pages/Calendar';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+  },
+  {
+    path: '/calendar',
+    element: <Calendar />,
   },
   {
     path: '/dashboard',
