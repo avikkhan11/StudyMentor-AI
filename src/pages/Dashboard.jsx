@@ -8,7 +8,8 @@ import { DailyStreak } from "@/components/daily-streak"
 import { RecentActivity } from "@/components/recent-activity"
 import { UpcomingAssignments } from "@/components/upcoming-assignments"
 import { Plus, BookOpen, CalendarIcon, Trophy } from "lucide-react"
-
+import { SidebarProvider } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/app-sidebar";
 import { Link } from 'react-router-dom';
 
 
@@ -31,7 +32,14 @@ export default function Dashboard() {
   ]
 
   return (
+    <>
+   
     <div className="flex flex-col p-6 space-y-6">
+    <SidebarProvider>
+   
+   <AppSidebar />
+ 
+</SidebarProvider>
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold">Dashboard</h1>
         <Button asChild>
@@ -163,5 +171,6 @@ export default function Dashboard() {
         </TabsContent>
       </Tabs>
     </div>
+    </>
   )
 }
